@@ -65,6 +65,10 @@ ul,p{
   list-style: none;
 }
 
+.oh{
+  overflow: hidden;
+}
+
 .mobile-content{
 
   @include from-768{
@@ -83,14 +87,14 @@ ul,p{
 .hide-mobile{
 
   @include for-992{
-    display: none;
+    display: none!important;
   }
 }
 
 .hide-desktop{
 
   @media (min-width: 992px) {
-    display: none;
+    display: none!important;
   }
 }
 
@@ -284,6 +288,13 @@ ul,p{
 
 }
 
+.main-wrap{
+
+  @include for-992{
+    margin-top: 80px;
+  }
+}
+
 .mobile-back{
   display: none;
 
@@ -318,13 +329,22 @@ ul,p{
     padding-top: 40px;
 
     @include for-992{
-      padding-top: 15px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 0 20px -10px black;
+      padding: 15px;
     }
   }
 
   &__top-column{
     display: flex;
     flex-direction: column;
+
+    @include for-992{
+      justify-content: center;
+    }
   }
 
   &__logo{
@@ -332,7 +352,7 @@ ul,p{
     width: 100%;
 
     @include for-992{
-      max-width: 50px;
+      max-width: 215px;
     }
   }
 
@@ -409,12 +429,34 @@ ul,p{
 
   &__bottom{
 
+    @include for-992{
+      position: fixed;
+      top: 0;
+      height: 100%;
+      max-width: 260px;
+      width: 100%;
+      background: white;
+      overflow-y: auto;
+      z-index: 150;
+      transition: .5s all;
+      left: -100%;
+
+      &.open{
+        box-shadow: 0 0 20px -5px black;
+        left: 0;
+      }
+    }
   }
 
   &__links{
     display: flex;
     justify-content: space-around;
     padding: 15px 0;
+
+    @include for-992{
+      flex-direction: column;
+      padding: 15px;
+    }
   }
 
   &__link{
@@ -424,6 +466,14 @@ ul,p{
     color: #333333;
     position: relative;
     transition: .3s all;
+
+    @include for-992{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+      margin-bottom: 15px
+    }
 
     &:hover{
       color: #5f86d6;
@@ -444,6 +494,10 @@ ul,p{
       transform: translateX(-50%);
       background: #8CAFF7;
       transition: .3s all;
+
+      @include for-992{
+        width: 15%;
+      }
     }
   }
 
@@ -454,12 +508,17 @@ ul,p{
       padding-left: 25px;
       padding-right: 25px;
     }
+
+    @include for-992{
+      padding: 15px;
+    }
+
   }
 
   &__top-mobile-btn{
     display: flex;
     width: 50px;
-    height: 50%;
+    height: 50px;
 
     @include from-992{
       display: none;
@@ -470,7 +529,19 @@ ul,p{
     display: flex;
     width: 100%;
     height: 100%;
-    background: #9CC5DE;
+    background-color: white;
+    background-image: url("../img/ico/burger.svg");
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: .1s all;
+    border: 2px solid #8caff7;
+    cursor: pointer;
+
+    &.show{
+      background-image: url("../img/ico/close.svg");
+    }
   }
 
 
@@ -480,6 +551,10 @@ ul,p{
   display: flex;
   justify-content: space-between;
 
+  @include for-992{
+    flex-direction: column;
+  }
+
   &__item{
     position: relative;
     display: flex;
@@ -488,6 +563,10 @@ ul,p{
 
   &__item:hover &__link{
     color: #E48080;
+
+    @include for-992{
+      color: inherit;
+    }
   }
 
   &__item:hover &__submenu{
@@ -508,6 +587,12 @@ ul,p{
     text-align: center;
     position: relative;
     z-index: 3;
+
+    @include for-992{
+      font-size: 16px;
+      justify-content: flex-start;
+      line-height: 30px;
+    }
   }
 
   &__submenu{
@@ -521,6 +606,17 @@ ul,p{
     transform: translateX(-50%);
     top: 25px;
 
+    @include for-992{
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+      padding-top: 0;
+      top: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+
     &:before{
       content: '';
       width: 100%;
@@ -532,6 +628,10 @@ ul,p{
       left: 0;
       bottom: 0;
       z-index: 2;
+
+      @include for-992{
+        display: none;
+      }
     }
   }
 
@@ -547,6 +647,12 @@ ul,p{
     color: #E48080;
     opacity: 0.8;
     background: #E1E1E1;
+
+    @include for-992{
+      opacity: 1;
+      background: transparent;
+      color: inherit;
+    }
   }
 
   &__submenu-item:last-child &__submenu-link{
@@ -575,6 +681,13 @@ ul,p{
     transition: .3s;
     position: relative;
     z-index: 3;
+
+    @include for-992{
+      justify-content: flex-start;
+      padding-left: 10px;
+      font-size: 14px;
+      white-space: normal;
+    }
   }
 
   &__submenu-lvl2{
@@ -587,6 +700,17 @@ ul,p{
     transform: translateX(-100%);
     top: 0;
 
+    @include for-992 {
+      position: relative;
+      transform: translate(0) !important;
+      visibility: visible;
+      opacity: 1;
+      z-index: 2;
+      padding-left: 10px;
+      max-height: 0;
+      overflow: hidden;
+    }
+
 
     &:before{
       content: '';
@@ -598,6 +722,10 @@ ul,p{
       position: absolute;
       top: 0;
       left: 0;
+
+      @include for-992{
+        display: none;
+      }
     }
   }
 
@@ -619,8 +747,17 @@ ul,p{
     justify-content: flex-end;
     transition: .3s all;
 
+    @include for-992{
+      white-space: initial;
+      font-size: 14px;
+    }
+
     &:hover{
       color: #E48080;
+
+      @include for-992{
+        color: inherit;
+      }
     }
   }
 
@@ -639,5 +776,54 @@ ul,p{
     justify-content: flex-start;
   }
 
+
+  @include for-992{
+
+    .parent {
+      cursor: pointer;
+
+      > a{
+        width: calc(100% - 30px);
+      }
+
+      //&:after {
+      //  content: '';
+      //  position: absolute;
+      //  width: 30px;
+      //  height: 30px;
+      //  right: 0;
+      //  top: 0;
+      //  background: url("../img/ico/arrow-right.svg") center/5px no-repeat;
+      //}
+
+      &.open {
+
+        > .mobile-arrow{
+          transform: rotate(90deg);
+        }
+
+        > div {
+          max-height: 1000px;
+        }
+      }
+
+    }
+  }
+
+  .mobile-arrow{
+    display: none;
+
+    @include for-992{
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 0;
+      top: 0;
+      background: url("../img/ico/arrow-right.svg") center/5px no-repeat;
+      cursor: pointer;
+      transition: .3s all;
+    }
+  }
 }
 

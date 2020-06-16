@@ -79,11 +79,31 @@ $(document).ready(function(){
 
 
 
-  $('.header__menu-btn').click(function () {
+  $('#menu-btn').click(function () {
     $(this).closest('header').toggleClass('menu-open');
-    $('.header__menu').toggleClass('open');
-    $(this).toggleClass('open');
+    $('#header-menu').toggleClass('open');
+    $(this).toggleClass('show');
+    $('body').toggleClass('oh');
   });
+
+  if($(window).width() < 992){
+
+    $('.mobile-arrow').click(function (e) {
+      $(this).parent().toggleClass('open');
+    });
+
+    // $('.parent').click(function (e) {
+    //   $(this).toggleClass('open');
+    // });
+    //
+    // $('.parent-sub').click(function (e) {
+    //   $(this).toggleClass('open');
+    // });
+  }
+
+
+
+
 
   $('.site-form__btn-i').click(function () {
     if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1  && $(this).closest('form').find('input[type="text"]').val().length > 0){

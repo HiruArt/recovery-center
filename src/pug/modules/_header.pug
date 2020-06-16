@@ -3,9 +3,9 @@ header.header
     .header__top
       .header__top-column
         a(href="/").header__logo
-          img(src="./img/ico/big-logo.svg" alt="logo").header__logo-img.hide-mobile
-          img(src="./img/ico/mobile-logo.svg" alt="logo").header__logo-img.hide-desktop
-      .header__top-column
+          img(src="./img/ico/big-logo.svg" alt="logo").header__logo-img
+          //img(src="./img/ico/mobile-logo.svg" alt="logo").header__logo-img.hide-desktop
+      .header__top-column.hide-mobile
         .header__social
           a(href="#").header__social-link
             include ../../img/ico/telegram.svg
@@ -20,18 +20,20 @@ header.header
         .header__top-help
           a(href="javascript:void(0);").header__top-help-i Получите помощь 24/7
       .header__top-mobile-btn
-        a(href="javascript:void(0);").header__top-mobile-btn-i
-    .header__bottom
+        a(href="javascript:void(0);").header__top-mobile-btn-i#menu-btn
+    .header__bottom#header-menu
       .header__links
         a(href="#").header__link Наркомания
         a(href="#").header__link Реабилитационные центры
         a(href="#").header__link Алкоголизм
       .header__nav
         .nav
-          .nav__item.open-submenu-right
+          .nav__item.open-submenu-right.parent
+            span.mobile-arrow
             a(href="#").nav__link Лечение
             .nav__submenu
-              .nav__submenu-item
+              .nav__submenu-item.parent
+                span.mobile-arrow
                 a(href="#").nav__submenu-link Мефедрон
                 .nav__submenu-lvl2
                   .nav__submenu-lvl2-item
@@ -64,10 +66,12 @@ header.header
             a(href="#").nav__link Клиники
           .nav__item.open-submenu-right
             a(href="#").nav__link Родственникам
-          .nav__item.open-submenu-left
+          .nav__item.open-submenu-left.parent
+            span.mobile-arrow
             a(href="#").nav__link Публикации
             .nav__submenu
-              .nav__submenu-item
+              .nav__submenu-item.parent
+                span.mobile-arrow
                 a(href="#").nav__submenu-link Мефедрон
                 .nav__submenu-lvl2
                   .nav__submenu-lvl2-item
@@ -96,7 +100,8 @@ header.header
                 a(href="#").nav__submenu-link Бутират
               .nav__submenu-item
                 a(href="#").nav__submenu-link Все статьи
-          .nav__item.open-submenu-left
+          .nav__item.open-submenu-left.parent
+            span.mobile-arrow
             a(href="#").nav__link Портал
             .nav__submenu
               .nav__submenu-item
