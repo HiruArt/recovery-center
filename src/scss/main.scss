@@ -827,3 +827,78 @@ ul,p{
   }
 }
 
+
+
+.footer{
+
+  &__inner{
+
+  }
+
+  &__top{
+
+  }
+
+  &__menu{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+
+  &__menu-item{
+
+  }
+
+  &__menu-link{
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+
+  &__social{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__social-item{
+    margin: 0 10px;
+  }
+
+  &__bottom{
+    display: flex;
+  }
+
+  &__left{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo{
+
+  }
+
+  &__phone{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0.01em;
+    color: #333333;
+    transition: .3s all;
+    padding: 5px 0;
+  }
+
+  &__right{
+    max-width: 410px;
+    width: 100%;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+
+}
+
