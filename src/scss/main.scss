@@ -108,8 +108,8 @@ ul,p{
   text-align: center;
 
   @include for-992{
-    font-size: 34px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 25px;
   }
 
   @include for-550{
@@ -872,6 +872,10 @@ ul,p{
     height: 100%;
     min-height: 575px;
     width: 100%;
+
+    @include for-550{
+      min-height: 415px;
+    }
   }
 
   &__form{
@@ -895,6 +899,22 @@ ul,p{
         max-width: 215px;
         width: 100%;
       }
+
+      @include for-550 {
+        .site-form__row, .site-form__input {
+          display: flex;
+          justify-content: center;
+
+          &:first-child{
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      @include for-550{
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -906,6 +926,15 @@ ul,p{
     color: #333333;
     margin-bottom: 15px;
     width: 100%;
+
+    @include for-550{
+      font-size: 20px;
+      line-height: 25px;
+
+      br{
+        display: none;
+      }
+    }
   }
 
   &__caption{
@@ -916,6 +945,10 @@ ul,p{
     margin-bottom: 15px;
     width: 100%;
     text-align: center;
+
+    @include for-550{
+      font-size: 14px;
+    }
   }
 
   &--stars &__form{
@@ -1041,9 +1074,22 @@ ul,p{
   &__items{
     display: flex;
     justify-content: space-between;
+
+    @include for-992{
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item{
+    @include for-992{
+      margin-bottom: 80px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
     &:last-child{
       .starting__img:after{
         display: none;
@@ -1066,6 +1112,14 @@ ul,p{
       width: 90px;
       height: 4px;
       background: rgba(156, 197, 222, 0.6);
+
+      @include for-992{
+        width: 4px;
+        height: 50px;
+        top: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
 
@@ -1088,6 +1142,11 @@ ul,p{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
+
+    @include for-550{
+      font-size: 36px;
+      line-height: 35px;
+    }
   }
 
   &__caption{
@@ -1097,6 +1156,10 @@ ul,p{
     text-align: center;
     letter-spacing: 0.01em;
     margin-bottom: 15px;
+
+    @include for-550{
+      font-size: 16px;
+    }
   }
 
   &__btn{
@@ -1212,6 +1275,14 @@ ul,p{
     padding: 0 15px;
     width: 33.33333%;
     margin: 15px 0;
+
+    @include for-992{
+      width: 50%;
+    }
+
+    @include for-550{
+      width: 100%;
+    }
   }
 
   &__content{
@@ -1284,6 +1355,10 @@ ul,p{
 .calculator{
   padding: 135px 0 170px;
 
+  @include for-768{
+    padding: 70px 0 70px;
+  }
+
   &__inner{
     padding: 25px 0 50px;
     background: #FFFFFF;
@@ -1311,6 +1386,11 @@ ul,p{
 
     form{
       display: flex;
+
+      @include for-768{
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -1319,6 +1399,10 @@ ul,p{
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 570px;
+
+    @include for-768{
+      justify-content: space-around;
+    }
   }
 
   &__item{
@@ -1364,6 +1448,10 @@ ul,p{
     padding-left: 160px;
     display: flex;
     align-items: center;
+
+    @include for-768{
+      padding-left: 0;
+    }
   }
 
   &__price{
@@ -1410,12 +1498,27 @@ ul,p{
   &__items{
     display: flex;
     flex-wrap: wrap;
+
+    @include for-992{
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item{
     width: 50%;
     display: flex;
     margin-bottom: 60px;
+
+    @include for-992{
+      width: 100%;
+    }
+
+    @include for-550{
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
   }
 
   &__img{
@@ -1435,6 +1538,11 @@ ul,p{
     flex-direction: column;
     padding-left: 60px;
     padding-right: 15px;
+
+    @include for-550{
+      margin-top: 20px;
+      padding-left: 15px;
+    }
   }
 
   &__subtitle{
@@ -1452,6 +1560,10 @@ ul,p{
     line-height: 20px;
     letter-spacing: 0.01em;
     color: #000000;
+
+    @include for-550{
+      font-size: 14px;
+    }
   }
 
   &__txt{
@@ -1459,7 +1571,9 @@ ul,p{
   }
 
   &__btn{
-
+    @include for-550{
+      margin: 0 auto;
+    }
   }
 
 }
@@ -1647,6 +1761,10 @@ ul,p{
 .our-services{
   padding-bottom: 90px;
 
+  @include for-768{
+    padding-bottom: 70px;
+  }
+
   &__inner{
 
   }
@@ -1661,12 +1779,29 @@ ul,p{
     display: flex;
     flex-wrap: wrap;
     padding: 57px 50px 42px;
+
+    @include for-768{
+      flex-wrap: wrap;
+    }
+
+    @include for-550{
+      padding: 30px 15px 30px;
+      margin: 0;
+    }
   }
 
   &__item{
     width: 33.3333%;
     padding: 0 15px;
     margin-bottom: 17px;
+
+    @include for-768{
+      width: 50%;
+    }
+
+    @include for-550{
+      width: 100%;
+    }
   }
 
   &__link{
@@ -1685,6 +1820,11 @@ ul,p{
     &:hover{
       color: #5f86d6;
       box-shadow: 0px 2.83167px 21.2375px rgba(0, 0, 0, 0);
+    }
+
+    @include for-1100{
+      font-size: 15px;
+      line-height: 14px;
     }
   }
 }
@@ -1765,6 +1905,10 @@ ul,p{
     padding-bottom: 67px;
     justify-content: space-between;
     align-items: center;
+
+    @include for-768{
+      flex-direction: column;
+    }
   }
 
   &__left{
@@ -1781,6 +1925,12 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin-bottom: 15px;
+
+    @include for-768{
+      font-size: 22px;
+      line-height: 20px;
+      margin-top: 20px;
+    }
   }
 
   &__subtitle{
@@ -1790,6 +1940,11 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin-bottom: 15px;
+
+    @include for-768{
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
 
   &__phone{
@@ -1799,6 +1954,11 @@ ul,p{
     letter-spacing: 0.01em;
     color: #333333;
     margin-bottom: 15px;
+
+    @include for-768{
+      font-size: 35px;
+      line-height: 42px;
+    }
   }
 
   &__btn{
@@ -1813,6 +1973,15 @@ ul,p{
     display: flex;
     margin-top: -45px;
     padding-bottom: 57px;
+
+    @include for-1100{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    @include for-768{
+      margin-top: 0;
+    }
   }
 
   &__left{
@@ -1823,6 +1992,20 @@ ul,p{
     flex-direction: column;
     padding: 90px 65px 35px;
     margin-bottom: 30px;
+
+    @media (max-width: 1290px) {
+      padding: 90px 19px 35px;
+    }
+
+    @include for-1100{
+      width: 100%;
+    }
+
+    @include for-768{
+      padding-top: 40px;
+    }
+
+
   }
 
   &__title{
@@ -1832,6 +2015,11 @@ ul,p{
     letter-spacing: 0.01em;
     color: #333333;
     margin-bottom: 15px;
+
+    @include for-768{
+      font-size: 20.58px;
+      line-height: 20px;
+    }
   }
 
   &__items{
@@ -1845,6 +2033,11 @@ ul,p{
     font-weight: 300;
     color: black;
     margin-bottom: 15px;
+
+    @include for-768{
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__form{
@@ -1852,10 +2045,51 @@ ul,p{
     form{
       display: flex;
       margin: 0 -15px;
+
+      @media (max-width: 1290px) {
+        flex-direction: column;
+      }
+      .form__phone{
+        @media (max-width: 1290px) {
+          width: 50%;
+        }
+
+        @media (max-width: 420px) {
+          width: 100%;
+        }
+      }
+      .site-form__input{
+        @media (max-width: 1290px) {
+          width: 50%;
+
+          input{
+            width: 100%;
+          }
+        }
+        @media (max-width: 420px) {
+          width: 100%;
+        }
+      }
+      .form__btn{
+        @media (max-width: 1290px) {
+          width: 50%;
+        }
+        @media (max-width: 420px) {
+          width: 100%;
+        }
+      }
     }
 
     .site-form-row{
       padding: 0 15px;
+
+      @media (max-width: 1290px) {
+        margin-bottom: 15px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
@@ -1871,6 +2105,11 @@ ul,p{
 
   &__right{
     width: 50%;
+
+
+    @include for-1100{
+      width: 100%;
+    }
   }
 
   &__right-img{
@@ -1900,6 +2139,7 @@ ul,p{
   }
 
 }
+
 
 .additional{
 
