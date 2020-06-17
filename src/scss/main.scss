@@ -1347,6 +1347,10 @@ ul,p{
 }
 .pageservice .steps{
 
+  &__inner{
+    padding-bottom: 80px;
+  }
+
   &__item{
     width: 25%;
   }
@@ -2140,6 +2144,66 @@ ul,p{
 
 }
 
+.solo-consultation{
+  padding-bottom: 40px;
+
+  &__inner{
+
+  }
+
+  &__content{
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    position: relative;
+  }
+
+  &__img{
+
+  }
+
+  &__absolute{
+    background-color: white;
+    margin-top: -80px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 770px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    p{
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      color: #000000;
+      margin: 15px 0;
+    }
+  }
+
+  &__title{
+
+  }
+
+  &__caption{
+
+  }
+
+  &__phone{
+
+  }
+
+  &__btn{
+
+  }
+
+  &__btn-i{
+
+  }
+
+}
 
 .additional{
 
