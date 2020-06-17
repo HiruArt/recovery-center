@@ -197,7 +197,6 @@ ul,p{
       background: #FFFFFF;
       box-shadow: 0px 2.83167px 21.2375px rgba(0, 0, 0, 0.25);
       border-radius: 28.3167px;
-      width: 100%;
       font-size: 12px;
       text-align: center;
       letter-spacing: 0.01em;
@@ -205,6 +204,7 @@ ul,p{
       border: 0;
       min-width: 165px;
       line-height: 35px;
+      width: fit-content;
     }
   }
 
@@ -861,6 +861,65 @@ ul,p{
   }
 }
 
+.top-bunner{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 575px;
+    width: 100%;
+  }
+
+  &__form{
+    max-width: 487px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 30px;
+
+    form.site-form{
+      display: flex;
+      margin: 0 -15px;
+
+      .site-form__row{
+        padding: 0 15px;
+      }
+
+      .site-btn, .site-form__input input{
+        max-width: 215px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__title{
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  &__caption{
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
 .reviews{
 
   background: #C4DCEB;
@@ -1182,6 +1241,23 @@ ul,p{
     min-height: 520px;
     display: flex;
     width: 100%;
+  }
+
+  &--reverse &__inner{
+    flex-direction: row-reverse;
+    margin-top: 0;
+    padding-top: 57px;
+  }
+  &--reverse &__left{
+    padding: 0;
+    width: 60%;
+    max-width: 620px;
+  }
+  &--reverse &__right{
+    padding: 0;
+    width: 40%;
+    display: flex;
+    align-items: center;
   }
 
 }
