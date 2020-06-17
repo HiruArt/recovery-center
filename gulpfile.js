@@ -69,6 +69,7 @@ gulp.task('css-libs', () => {
       // 'node_modules/swiper/css/swiper.min.css',
       'node_modules/magnific-popup/dist/magnific-popup.css',
       'node_modules/slick-carousel/slick/slick.css',
+      'node_modules/jquery-ui-dist/jquery-ui.min.css',
       'node_modules/slick-carousel/slick/slick-theme.css'
   ])
     .pipe(gulp.dest('dist/css/libs/'))
@@ -90,6 +91,7 @@ gulp.task('js-libs', () => {
       'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
       'node_modules/slick-carousel/slick/slick.min.js',
       'node_modules/jquery-ui-dist/jquery-ui.min.js'
+
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))
