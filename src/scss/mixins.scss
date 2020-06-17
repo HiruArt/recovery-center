@@ -5,10 +5,10 @@
   @media (min-width: 351px) { @content; }
 }
 
-@mixin from-550 {
+@mixin for-550 {
   @media (max-width: 550px) { @content; }
 }
-@mixin for-550 {
+@mixin from-550 {
   @media (min-width: 551px) { @content; }
 }
 
