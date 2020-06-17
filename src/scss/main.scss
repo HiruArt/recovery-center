@@ -918,6 +918,37 @@ ul,p{
     text-align: center;
   }
 
+  &--stars &__form{
+    padding-bottom: 25px;
+  }
+
+  &__stars{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+  }
+
+  &__stars-i{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    padding-left: 25px;
+    position: relative;
+    margin: 0 15px;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 14px;
+      height: 14px;
+      background: url("../img/ico/star.svg") center/contain no-repeat;
+    }
+  }
+
 }
 
 .service-type{
@@ -1073,7 +1104,6 @@ ul,p{
   }
 
 }
-
 
 .reviews{
 
@@ -1243,6 +1273,12 @@ ul,p{
     }
   }
 
+}
+.pageservice .steps{
+
+  &__item{
+    width: 25%;
+  }
 }
 
 .calculator{
@@ -1465,6 +1501,9 @@ ul,p{
     border-radius: 30px;
     overflow: hidden;
     min-height: 235px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
 
     img{
       width: 100%;
@@ -1543,6 +1582,11 @@ ul,p{
       letter-spacing: 0.01em;
       color: #333333;
       margin-bottom: 10px;
+      transition: .3s;
+
+      &:hover{
+        color: #E48080;
+      }
     }
   }
 
@@ -1577,9 +1621,28 @@ ul,p{
     }
   }
 
+  &__txt{
+    margin-bottom: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000000;
+  }
+
 
 }
+.pageservice .reabilitation{
 
+  &__subtitle{
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  &__caption{
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
 
 .our-services{
   padding-bottom: 90px;
@@ -1595,7 +1658,6 @@ ul,p{
   &__content{
     background: rgba(156, 197, 222, 0.6);
     border-radius: 30px;
-    margin: 0 -15px;
     display: flex;
     flex-wrap: wrap;
     padding: 57px 50px 42px;
@@ -1625,6 +1687,10 @@ ul,p{
       box-shadow: 0px 2.83167px 21.2375px rgba(0, 0, 0, 0);
     }
   }
+}
+.pageservice .our-services{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .stages{
@@ -1910,6 +1976,62 @@ ul,p{
     }
   }
 
+}
+
+.license{
+  padding-top: 15px;
+  padding-bottom: 50px;
+
+  &__title{
+
+  }
+
+  &__inner{
+
+  }
+
+  &__list{
+
+  }
+
+  &__item{
+
+  }
+
+  &__link{
+    display: flex;
+    padding:  0 10px;
+  }
+
+  &__img{
+    width: 100%;
+  }
+
+}
+
+.txt-block{
+  padding-top: 45px;
+  padding-bottom: 45px;
+
+  &__inner{
+
+  }
+  &__title{
+
+  }
+  &__content{
+    max-width: 760px;
+    margin: 0 auto;
+
+    p{
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+      color: #000000;
+      margin: 15px 0;
+    }
+  }
 }
 
 .footer{

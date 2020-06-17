@@ -131,115 +131,14 @@ $(document).ready(function(){
     }
   });
 
-
-  // var mySwiper = new Swiper ('#reviews-slider', {
-  //   slidesPerView: 1.05,
-  //   spaceBetween: 15,
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  //   loop: true,
-  //   breakpoints: {
-  //     1200: {
-  //       slidesPerView: 2.45,
-  //       pagination: {
-  //         el: '.swiper-pagination',
-  //         clickable: true,
-  //       },
-  //     },
-  //
-  //     992: {
-  //       slidesPerView: 1.45,
-  //       pagination: {
-  //         el: '.swiper-pagination',
-  //         clickable: true,
-  //       },
-  //     },
-  //
-  //     550: {
-  //       slidesPerView: 1,
-  //       spaceBetween: 30,
-  //     },
-  //   }
-  // });
-  //
-  // var mySwiper = new Swiper ('#sertificate-slider', {
-  //   slidesPerView: 1,
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  //   loop: true,
-  //   breakpoints: {
-  //     992: {
-  //       slidesPerView: 4
-  //     },
-  //     800: {
-  //       slidesPerView: 3
-  //     },
-  //     550: {
-  //       slidesPerView: 2
-  //     },
-  //   }
-  // });
-  //
-  // $('#sertificate-slider').magnificPopup({
-  //   delegate: 'a:not(.slick-cloned)',
-  //   type: 'image',
-  //   closeOnContentClick: false,
-  //   closeBtnInside: false,
-  //   gallery: {
-  //     enabled: true,
-  //   },
-  //   zoom: {
-  //     enabled: true,
-  //     duration: 300
-  //   },
-  //   removalDelay: 300,
-  //   disableOn: 0,
-  //   midClick: true,
-  //
-  // });
-  //
-  //
-  // if($(window).width() < 1120) {
-  //   var mySwiper = new Swiper ('#course-slider', {
-  //     slidesPerView: 1.15,
-  //     spaceBetween: 15,
-  //     loop: true,
-  //     breakpoints: {
-  //       800: {
-  //         slidesPerView: 2.15,
-  //       },
-  //
-  //       550: {
-  //         slidesPerView: 1.75,
-  //       },
-  //     }
-  //   });
-  //
-  //   var mySwiper = new Swiper ('#servise-slider', {
-  //     slidesPerView: 1.2,
-  //     spaceBetween: 15,
-  //     loop: true,
-  //     breakpoints: {
-  //
-  //       1050:{
-  //         slidesPerView: 4.2,
-  //       },
-  //
-  //       800: {
-  //         slidesPerView: 3.2,
-  //       },
-  //
-  //       550: {
-  //         slidesPerView: 2.2,
-  //       },
-  //     }
-  //   });
-  //
-  // }
+  /*sliders start*/
+  $('#licen-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+  });
+  /*sliders end*/
 
 
   var phoneMask = $('input[data-valid="phone"]');
@@ -263,6 +162,24 @@ $(document).ready(function(){
     }
   });
   /*popups end*/
+
+  $('#licen-slider').magnificPopup({
+    delegate: 'a:not(.slick-cloned)',
+    type: 'image',
+    closeOnContentClick: false,
+    closeBtnInside: false,
+    gallery: {
+      enabled: true,
+    },
+    zoom: {
+      enabled: true,
+      duration: 300
+    },
+    removalDelay: 300,
+    disableOn: 0,
+    midClick: true,
+
+  });
 
 });
 
