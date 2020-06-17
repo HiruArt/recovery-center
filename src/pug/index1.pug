@@ -173,19 +173,20 @@ block content
         .starting__items
           .starting__item
             .starting__img
-              img(src="")
-            .starting__name Бесплатная  консультация
+              include ../img/ico/starting3.svg
+            .starting__name Бесплатная <br> консультация
           .starting__item
             .starting__img
-              img(src="")
-            .starting__name Подбор услуги и программы
+              include ../img/ico/starting2.svg
+            .starting__name Подбор услуги <br> и программы
           .starting__item
             .starting__img
-              img(src="")
-            .starting__name Начало лечения и восстановления
+              include ../img/ico/starting1.svg
+            .starting__name Начало лечения <br> и восстановления
         a(href="tel:88006003960").starting__phone 8 800 600 39 60
         .starting__caption Круглосуточная горячая линия
-        a(href="#").starting__btn Записаться сейчас
+        a(href="#").starting__btn.site-btn
+          span Записаться сейчас
 
     .small-price
       .small-price__inner.site-container
@@ -379,16 +380,18 @@ block content
           .our-services__item
             a(href="#").our-services__link Дополнительно
 
-    .calculator
+    .calculator.webp-img.b-lazy(data-webp="./img/grey-wave-bg.webp" data-img="./img/grey-wave-bg.png")
       .calculator__inner.site-container
-        .calculator__title.site-title
-          span
+        .calculator__title.site-title Калькулятор
+          span Рассчитайте стоимость вызова
         .calculator__content
           form
             .calculator__left
               .calculator__item
                 lable.calculator__lable Кому нужна помощь?
                 select.calculator__select
+                  option Выбрать
+                  option Выбрать
                   option Выбрать
               .calculator__item
                 lable.calculator__lable Услуги
@@ -407,7 +410,8 @@ block content
                 select.calculator__select
                   option Выбрать
               .calculator__item
-                a(href="#").calculator__btn Посчитать
+                a(href="#").calculator__btn.site-btn
+                  span Посчитать
             .calculator__right
               .calculator__price
                 .calculator__price-title Итог:
