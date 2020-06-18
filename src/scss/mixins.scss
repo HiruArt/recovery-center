@@ -5,6 +5,12 @@
   @media (min-width: 351px) { @content; }
 }
 
+@mixin for-420 {
+  @media (max-width: 420px) { @content; }
+}
+@mixin from-420 {
+  @media (min-width: 421px) { @content; }
+}
 @mixin for-550 {
   @media (max-width: 550px) { @content; }
 }

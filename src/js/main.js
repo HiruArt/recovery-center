@@ -105,6 +105,25 @@ $(document).ready(function(){
   $( ".calculator__select" ).selectmenu();
 
 
+  $('.site-form .site-btn').click(function (e) {
+    e.preventDefault();
+
+    var textField = $(this).closest('form').find('input[type="text"]').length > 0 ? $(this).closest('form').find('input[type="text"]').val().length > 0 : true;
+
+    console.log($(this).closest('form').find('input[type="tel"]').val());
+
+    if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1 && $(this).closest('form').find('input[type="tel"]').val().length !== 0  && textField){
+      $(this).closest('form').addClass('submitted');
+    } else {
+      if($(this).closest('form').find('input[type="tel"]').val().length === 0 || $(this).closest('form').find('input[type="tel"]').val().indexOf('_') > 0){
+        $(this).closest('form').find('input[type="tel"]').parent().addClass('error-field');
+      }
+      if(textField){
+        $(this).closest('form').find('input[type="text"]').parent().addClass('error-field');
+      }
+    }
+  });
+
 
 
   $('.site-form__btn-i').click(function () {
