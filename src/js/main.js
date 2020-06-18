@@ -204,6 +204,31 @@ $(document).ready(function(){
       bLazy.revalidate();
     });
 
+    $('#dropper-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+    $('#dropper-slider').on('afterChange', function(event, slick, direction){
+      bLazy.revalidate();
+    });
+
     $('#reviews-slider').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
