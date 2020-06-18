@@ -2447,6 +2447,116 @@ ul,p{
 
 }
 
+.icon-block{
+  background: rgba(156,197,222,.6);
+  padding: 65px 0 90px;
+
+  &__inner{
+
+  }
+
+  &__items{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item{
+    text-align: center;
+    max-width: 240px;
+  }
+
+  &__img{
+    margin-bottom: 20px;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 17.9151px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+    color: #333333;
+  }
+
+  &__txt{
+    font-weight: 300;
+    font-size: 12.5405px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+}
+
+.specialists{
+  padding-bottom: 50px;
+
+  &__inner{
+
+  }
+
+  &__title{
+
+  }
+
+  &__content{
+    padding: 40px 0 30px;
+    border-radius: 30px;
+  }
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 33%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &:nth-last-child(2){
+      margin-bottom: 0;
+    }
+  }
+
+  &__img{
+    img{
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+      border-radius: 100px;
+    }
+
+    margin-bottom: 20px;
+
+  }
+
+  &__subtitle{
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  &__caption{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+
+    /* identical to box height */
+    letter-spacing: 0.01em;
+  }
+
+}
+
 .when-call{
 
   &__inner{
