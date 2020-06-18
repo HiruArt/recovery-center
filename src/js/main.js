@@ -114,6 +114,7 @@ $(document).ready(function(){
 
     if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1 && $(this).closest('form').find('input[type="tel"]').val().length !== 0  && textField){
       $(this).closest('form').addClass('submitted');
+      $('.submit').addClass('open');
     } else {
       if($(this).closest('form').find('input[type="tel"]').val().length === 0 || $(this).closest('form').find('input[type="tel"]').val().indexOf('_') > 0){
         $(this).closest('form').find('input[type="tel"]').parent().addClass('error-field');
