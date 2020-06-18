@@ -114,12 +114,14 @@ $(document).ready(function(){
 
     if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1 && $(this).closest('form').find('input[type="tel"]').val().length !== 0  && textField){
       $(this).closest('form').addClass('submitted');
-      $('.submit').addClass('open');
+      if ($(this).closest('.popup').length == 0) {
+        $('.submit').addClass('open');
+      }
     } else {
       if($(this).closest('form').find('input[type="tel"]').val().length === 0 || $(this).closest('form').find('input[type="tel"]').val().indexOf('_') > 0){
         $(this).closest('form').find('input[type="tel"]').parent().addClass('error-field');
       }
-      if(textField){
+      if(!textField){
         $(this).closest('form').find('input[type="text"]').parent().addClass('error-field');
       }
     }
@@ -127,25 +129,24 @@ $(document).ready(function(){
 
 
 
-  $('.site-form__btn-i').click(function () {
-    if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1  && $(this).closest('form').find('input[type="text"]').val().length > 0){
-      $(this).closest('form').addClass('submitted');
-    } else {
-      if($(this).closest('form').find('input[type="tel"]').val().length === 0 || $(this).closest('form').find('input[type="tel"]').val().indexOf('_') > 0){
-        $(this).closest('form').find('input[type="tel"]').parent().addClass('error-field');
-      }
-      if($(this).closest('form').find('input[type="text"]').val().length === 0){
-        $(this).closest('form').find('input[type="text"]').parent().addClass('error-field');
-      }
-    }
-  });
+  // $('.site-form__btn-i').click(function () {
+  //   if($(this).closest('form').find('input[type="tel"]').val().indexOf('_') === -1  && $(this).closest('form').find('input[type="text"]').val().length > 0){
+  //     $(this).closest('form').addClass('submitted');
+  //   } else {
+  //     if($(this).closest('form').find('input[type="tel"]').val().length === 0 || $(this).closest('form').find('input[type="tel"]').val().indexOf('_') > 0){
+  //       $(this).closest('form').find('input[type="tel"]').parent().addClass('error-field');
+  //     }
+  //     if($(this).closest('form').find('input[type="text"]').val().length === 0){
+  //       $(this).closest('form').find('input[type="text"]').parent().addClass('error-field');
+  //     }
+  //   }
+  // });
 
   $(document).on('click', '.error-field', function () {
     $(this).removeClass('error-field');
   });
 
   $('input[data-valid="phone"]').click(function () {
-    console.log(213);
     if($(this).parent().hasClass('error-field')){
       $(this).parent().removeClass('error-field');
     }
