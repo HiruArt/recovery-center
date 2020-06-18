@@ -208,6 +208,54 @@ ul,p{
     }
   }
 
+  &__checkbox{
+
+    input[type="checkbox"]{
+      display: none;
+
+      &:checked + label:after{
+        opacity: 1;
+      }
+    }
+
+    label{
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 13px;
+      letter-spacing: 0.01em;
+      color: #000000;
+      position: relative;
+      padding-left: 20px;
+      display: flex;
+
+
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 11px;
+        height: 11px;
+        background: #ABABAB;
+        border-radius: 2px;
+      }
+
+      &:after{
+        content: '';
+        left: 3px;
+        top: 1px;
+        position: absolute;
+        width: 3px;
+        height: 6px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: .2s all;
+      }
+    }
+  }
+
   &__btn{
     width: 100%;
   }
@@ -234,7 +282,7 @@ ul,p{
   opacity: 0;
   transition: .2s;
   z-index: -1;
-  border-radius: 50px 0;
+  border-radius: 20px;
 
   &__img{
     width: 126px;
@@ -2644,6 +2692,15 @@ ul,p{
         line-height: 23px;
         letter-spacing: 0.01em;
         color: #000000;
+        transition: .2s all;
+
+        &:hover{
+          color: #E48080;
+
+          &:after{
+            background: #E48080;
+          }
+        }
 
         &:after{
           content: '';
@@ -2653,6 +2710,7 @@ ul,p{
           width: 100%;
           height: 2px;
           background: #77A3BE;
+          transition: .2s all;
         }
       }
     }
@@ -2845,9 +2903,10 @@ ul,p{
 }
 
 .ui-widget.ui-widget-content{
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  //border-radius: 10px;
+  //border-top-left-radius: 0;
+  //border-top-right-radius: 0;
+  border-radius: 15px;
   padding-top: 5px;
   border: 2px solid #E5E5E5;
   margin-top: -2px;
@@ -2855,4 +2914,199 @@ ul,p{
 
 .ui-state-active{
   background: #eeeeee !important;
+}
+
+.popup{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  transition: .3s all;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+
+  &.open{
+    z-index: 350;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
+  &__inner{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__close{
+    position: absolute;
+    right: -24px;
+    top: -24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    transition: .3s all;
+    z-index: 3;
+
+    @include for-992{
+      width: 25px;
+      height: 25px;
+      right: 5px;
+      top: 5px;
+    }
+
+    &:hover{
+      opacity: .7;
+    }
+
+  }
+
+  &__close-ico{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: url("../img/ico/cancel.svg") center no-repeat;
+    background-size: contain;
+  }
+
+
+
+}
+
+.callback{
+
+  &__content{
+    display: flex;
+    justify-content: flex-end;
+    width: 768px;
+    border-radius: 20px;
+    height: 500px;
+    padding: 30px;
+    background-repeat: no-repeat;
+
+    @include for-992{
+      padding: 15px;
+      width: auto;
+      justify-content: center;
+      height: auto;
+      position: relative;
+
+      &:before{
+        content: '';
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 20px;
+        opacity: .8;
+      }
+    }
+  }
+
+  &__form{
+    max-width: 365px;
+    width: 100%;
+
+    @include for-992{
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__form-row{
+    margin-bottom: 15px;
+  }
+
+  &__title{
+    font-weight: 300;
+    font-size: 27px;
+    line-height: 32px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin-bottom: 15px;
+    padding: 0 15px;
+
+    @include for-992{
+      font-size: 18px;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  &__input{
+
+    @include for-992{
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      width: 100%;
+      max-width: 280px;
+
+      @include from-992{
+        font-size: 24px;
+        line-height: 56px;
+        max-width: 335px;
+      }
+
+    }
+  }
+
+  &__checkbox{
+    
+    @include from-992{
+      padding: 0 15px;
+    }
+
+    label{
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 13px;
+      letter-spacing: 0.01em;
+      color: #000000;
+    }
+  }
+
+  &__btn{
+
+    @include from-992{
+      max-width: 100% ;
+      border-radius: 55px;
+      width: 100%;
+    }
+
+    @include for-992{
+      margin: 0 auto;
+    }
+
+    span{
+      font-weight: 700;
+
+      @include from-992{
+        line-height: 74px;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+      }
+    }
+  }
 }

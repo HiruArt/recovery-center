@@ -142,11 +142,12 @@ $(document).ready(function(){
 
 
   var phoneMask = $('input[data-valid="phone"]');
-  $(phoneMask).inputmask('+7(999)999-99-99');
+  $(phoneMask).inputmask('+7 999 999 99 99');
 
 
   /*popups start*/
   $(document).on('click', 'a[data-modal-class]', function (e) {
+    e.preventDefault();
     var dataModalId = $(this).attr('data-modal-class');
     $('.popup.' + dataModalId + '').addClass('open');
   });
