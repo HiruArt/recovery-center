@@ -3625,3 +3625,12 @@ ul,p{
     }
   }
 }
+
+.submit{
+
+  &__content{
+    padding: 30px 15px;
+    background: white;
+    border-radius: 20px;
+  }
+}
