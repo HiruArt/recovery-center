@@ -154,7 +154,7 @@ $(document).ready(function(){
   $('#licen-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     dots: false,
     responsive: [
       {

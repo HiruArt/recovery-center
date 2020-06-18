@@ -3013,6 +3013,7 @@ ul,p{
 
       @include for-768{
         font-size: 20px;
+        line-height: 28px;
       }
     }
   }
@@ -3060,7 +3061,7 @@ ul,p{
 
         @include for-768{
           font-size: 14px;
-          line-height: 36px;
+          line-height: 28px;
         }
 
         &:after{
@@ -3646,5 +3647,46 @@ ul,p{
     padding: 30px 15px;
     background: white;
     border-radius: 20px;
+  }
+}
+
+.slick-slider{
+  position: relative;
+
+  .slick-slide{
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .slick-arrow{
+    position: absolute;
+    border: 2px solid #f35050;
+    border-radius: 50%;
+    top: -20px;
+    width: 30px;
+    height: 30px;
+    background: url("../img/ico/arrow-right.svg") center/7px no-repeat;
+    transition: .2s;
+    transform: none;
+    z-index: 2;
+
+    &:before{
+      content: '';
+    }
+  }
+
+  .slick-prev{
+    left: 15px;
+    transform: scale(-1, -1);
+  }
+
+  .slick-next{
+    right: 15px;
+  }
+
+  .slick-disabled{
+    opacity: .5;
   }
 }
