@@ -11,6 +11,7 @@
 @mixin from-420 {
   @media (min-width: 421px) { @content; }
 }
+
 @mixin for-550 {
   @media (max-width: 550px) { @content; }
 }

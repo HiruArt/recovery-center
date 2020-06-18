@@ -1009,6 +1009,13 @@ ul,p{
     display: flex;
     justify-content: center;
     padding-top: 25px;
+
+    @include for-420{
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
   }
 
   &__stars-i{
@@ -1020,6 +1027,11 @@ ul,p{
     padding-left: 25px;
     position: relative;
     margin: 0 15px;
+
+    @include for-768{
+      margin: 0 5px;
+      width: fit-content;
+    }
 
     &:before{
       content: '';
@@ -1989,6 +2001,11 @@ ul,p{
     background: #C4DCEB;
     border-radius: 50%;
     margin-bottom: 25px;
+
+    @include for-992{
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
   }
 
   &__name{
@@ -2179,6 +2196,7 @@ ul,p{
 
     @include for-1100{
       width: 100%;
+      padding: 50px 15px 30px;
     }
 
     @include for-768{
@@ -2296,12 +2314,6 @@ ul,p{
       width: 100%;
     }
 
-    @include for-768{
-      width: 100%;
-      position: absolute;
-      justify-content: center;
-      opacity: .2;
-    }
   }
 
   &__right-img{
@@ -2311,6 +2323,18 @@ ul,p{
     min-height: 520px;
     display: flex;
     width: 100%;
+
+    @include for-1100{
+      min-height: 400px;
+      background-size: cover;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 15px;
+    }
+
+    @include for-768{
+      width: 100%;
+    }
   }
 
   &--reverse &__inner{
@@ -2337,6 +2361,7 @@ ul,p{
     @include for-768{
       width: 100%;
       max-width: 100%;
+      display: none;
     }
   }
 
