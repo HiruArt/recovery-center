@@ -1882,6 +1882,19 @@ ul,p{
     line-height: 21px;
   }
 }
+.dropper{
+
+  @include for-992 {
+    .reabilitation__img {
+      padding: 15px;
+
+      svg {
+        height: 100px;
+        width: 100%;
+      }
+    }
+  }
+}
 
 .our-services{
   padding-bottom: 90px;
@@ -3101,6 +3114,7 @@ ul,p{
 
     @include for-768{
       width: 50%;
+
     }
 
     @include for-550{
