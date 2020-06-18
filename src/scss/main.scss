@@ -1039,6 +1039,10 @@ ul,p{
 
   &__inner{
 
+    @include for-768 {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__title{
@@ -1048,9 +1052,18 @@ ul,p{
   &__items{
     display: flex;
     justify-content: space-between;
+
+    @include for-768{
+      display: inherit;
+    }
   }
 
   &__item-wrap{
+
+    @include for-768{
+      max-width: 100%;
+      padding: 30px 15px;
+    }
 
   }
 
@@ -1061,12 +1074,20 @@ ul,p{
     border-radius: 30px;
     max-width: 250px;
     margin-bottom: 15px;
+
+    @include for-768{
+      max-width: 100%;
+    }
   }
 
   &__img{
     img{
       box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
       border-radius: 30px;
+
+      @include for-768{
+        width: 100%;
+      }
     }
   }
 
@@ -1232,11 +1253,20 @@ ul,p{
   &__items{
     margin: 0 -30px;
     display: flex;
+
+    @include for-992{
+      margin: 0 -15px;
+    }
   }
 
   &__item{
     padding: 0 30px;
     width: 33.33333%;
+
+    @include for-992{
+      padding: 30px 15px;
+      width: 100%;
+    }
   }
 
   &__content{
@@ -1635,6 +1665,13 @@ ul,p{
   &__inner{
     padding-top: 65px;
     padding-bottom: 65px;
+
+    @include for-992{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__title{
@@ -1644,11 +1681,21 @@ ul,p{
   &__items{
     display: flex;
     margin: 0 -15px;
+
+    @include for-992{
+      margin: 0;
+      display: inherit;
+    }
   }
 
   &__item{
     width: 33.3333%;
     padding: 0 15px;
+
+    @include for-992{
+      width: 100%;
+      padding: 30px 15px;
+    }
   }
 
   &__content{
@@ -1670,6 +1717,10 @@ ul,p{
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
     justify-content: center;
     align-items: center;
+
+    @include for-992{
+      min-height: auto;
+    }
 
     img{
       width: 100%;
@@ -1901,7 +1952,7 @@ ul,p{
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
-  }
+      }
 
   &__item{
     width: 33.3333%;
@@ -1912,6 +1963,10 @@ ul,p{
 
     &:nth-child(2) .stages__img img{
       transform: translateX(10px);
+    }
+
+    @include for-992{
+      width: 100%;
     }
   }
 
@@ -1961,6 +2016,7 @@ ul,p{
 
     @include for-768{
       flex-direction: column;
+      position: relative;
     }
   }
 
@@ -1970,15 +2026,40 @@ ul,p{
 
   &__left{
     width: 50%;
+
+    @include for-768{
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      display: flex;
+      opacity: .2;
+      height: 100%;
+    }
   }
 
   &--reverse &__left{
     display: flex;
     flex-direction: row-reverse;
+
+
+    @include for-768{
+      justify-content: center;
+    }
   }
 
   &__right{
     width: 50%;
+
+    @include for-768{
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      align-items: center;
+    }
   }
 
   &__title{
@@ -1992,6 +2073,7 @@ ul,p{
       font-size: 22px;
       line-height: 20px;
       margin-top: 20px;
+      text-align: center;
     }
   }
 
@@ -2006,6 +2088,7 @@ ul,p{
     @include for-768{
       font-size: 18px;
       line-height: 18px;
+      text-align: center;
     }
   }
 
@@ -2020,11 +2103,16 @@ ul,p{
     @include for-768{
       font-size: 35px;
       line-height: 42px;
+      display: flex;
+      justify-content: center;
     }
   }
 
   &__btn{
 
+    @include for-768{
+      margin: 0 auto;
+    }
   }
 
 }
@@ -2065,6 +2153,11 @@ ul,p{
 
     @include for-768{
       padding-top: 40px;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
+      background: transparent;
     }
 
 
@@ -2172,6 +2265,13 @@ ul,p{
     @include for-1100{
       width: 100%;
     }
+
+    @include for-768{
+      width: 100%;
+      position: absolute;
+      justify-content: center;
+      opacity: .2;
+    }
   }
 
   &__right-img{
@@ -2192,12 +2292,22 @@ ul,p{
     padding: 0;
     width: 60%;
     max-width: 620px;
+
+    @include for-768{
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &--reverse &__right{
     padding: 0;
     width: 40%;
     display: flex;
     align-items: center;
+
+    @include for-768{
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
 }

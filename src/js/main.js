@@ -138,6 +138,105 @@ $(document).ready(function(){
     arrows: false,
     dots: false,
   });
+
+
+  /*mobile sliders*/
+  if($(window).width() < 992) {
+
+    $('#reabilitation-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+    $('#reviews-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+    $('#etap-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+  }
+
+  /*mobile sliders*/
+  if($(window).width() < 800) {
+
+    $('#service-type-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+  }
   /*sliders end*/
 
 
