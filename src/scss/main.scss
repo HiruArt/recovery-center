@@ -207,6 +207,10 @@ ul,p{
       width: fit-content;
       border: 1px solid transparent;
       transition: 0.3s;
+
+      @include for-550{
+        font-size: 16px !important;
+      }
     }
   }
 
@@ -279,7 +283,7 @@ ul,p{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 65px 70px 77px;
+  padding: 30px 15px;
   visibility: visible;
   opacity: 0;
   transition: .2s;
@@ -305,6 +309,11 @@ ul,p{
     line-height: 22px;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
+
+    @include for-768{
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__caption{
@@ -313,6 +322,10 @@ ul,p{
     line-height: 28px;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
+
+    @include for-768{
+      line-height: 18px;
+    }
   }
 
 }
@@ -320,7 +333,7 @@ ul,p{
 .submitted + .site-form-submit{
   visibility: visible;
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 
 .check-items{
