@@ -205,6 +205,8 @@ ul,p{
       min-width: 165px;
       line-height: 35px;
       width: fit-content;
+      border: 1px solid transparent;
+      transition: 0.3s;
     }
   }
 
@@ -1401,6 +1403,14 @@ ul,p{
 
   &__item{
     width: 25%;
+
+    @include for-992{
+      width: 50%;
+    }
+
+    @include for-550{
+      width: 100%;
+    }
   }
 }
 
@@ -1970,6 +1980,10 @@ ul,p{
 
   &__left{
     width: 50%;
+
+    @include for-550{
+      width: 100%;
+    }
   }
 
   &--reverse &__left{
@@ -1979,6 +1993,10 @@ ul,p{
 
   &__right{
     width: 50%;
+
+    @include for-550{
+      width: 100%;
+    }
   }
 
   &__title{
@@ -2025,6 +2043,18 @@ ul,p{
 
   &__btn{
 
+  }
+
+  &--reverse{
+    .support__left{
+      @include for-768{
+        display: none;
+      }
+    }
+
+    .support__inner{
+      justify-content: center;
+    }
   }
 
 }
@@ -2207,6 +2237,10 @@ ul,p{
     padding-bottom: 0;
     margin-bottom: -50px;
     margin-top: -45px;
+
+    @include for-992 {
+      margin-top: 30px;
+    }
   }
 
   &__left{
@@ -2235,6 +2269,10 @@ ul,p{
     height: 350px;
     width: 365px;
     z-index: -1;
+
+    @include for-992{
+      display: none;
+    }
   }
 
   &__absolute{
@@ -2264,6 +2302,16 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin-bottom: 15px;
+
+    @include for-992{
+      font-size: 30px;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    @include for-550{
+      font-size: 25px;
+    }
   }
 
   &__caption{
@@ -2273,6 +2321,13 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin-bottom: 50px;
+    text-align: center;
+
+    @include for-992{
+      font-size: 15px;
+      line-height: 15px;
+      margin-bottom: 15px;
+    }
   }
 
   &__phone{
@@ -2283,6 +2338,13 @@ ul,p{
     color: #333333;
     margin-bottom: 70px;
     display: flex;
+
+    @include for-992{
+      font-size: 33px;
+      line-height: 48px;
+      letter-spacing: .075em;
+      margin-bottom: 20px;
+    }
   }
 
   &__btn{
@@ -2434,6 +2496,11 @@ ul,p{
   background-position: center;
   background-size: cover;
 
+  @include for-992{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   &__inner{
 
   }
@@ -2446,6 +2513,10 @@ ul,p{
     background: white;
     border-radius: 30px;
     padding: 15px 50px;
+
+    @include for-992{
+      padding: 15px;
+    }
   }
 
   p{
@@ -2455,6 +2526,11 @@ ul,p{
     color: #000000;
     margin: 15px 0;
     //text-align: justify;
+
+    @include for-768{
+      font-size: 15px;
+      line-height: 23px;
+    }
   }
 
   &__list{
@@ -2462,6 +2538,10 @@ ul,p{
     margin: 0 -15px;
     flex-wrap: wrap;
     padding: 15px 60px;
+
+    @include for-768{
+      padding: 15px;
+    }
   }
 
   &__item{
@@ -2471,6 +2551,14 @@ ul,p{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include for-550{
+      width: 50%;
+    }
+
+    @include for-420{
+      width: 100%;
+    }
   }
 
   &__ico{
@@ -2519,11 +2607,24 @@ ul,p{
   &__items{
     display: flex;
     justify-content: space-around;
+
+    @include for-550{
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item{
     text-align: center;
     max-width: 240px;
+
+    @include for-550{
+      margin-bottom: 25px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__img{
@@ -2554,6 +2655,10 @@ ul,p{
   padding: 30px 0 35px;
   position: relative;
 
+  @include for-768{
+    padding-bottom: 0;
+  }
+
   &:after{
     content: '';
     display: block;
@@ -2566,11 +2671,19 @@ ul,p{
     transform: translateX(-50%);
     z-index: -1;
     margin-left: 320px;
+
+    @include for-768{
+      display: none;
+    }
   }
 
   &__inner{
     text-align: center;
     padding-right: 135px;
+
+    @include for-768{
+      padding-right: 0;
+    }
   }
 
   &__title{
@@ -2580,6 +2693,16 @@ ul,p{
     letter-spacing: 0.01em;
     max-width: 550px;
     margin: 0 auto 16px;
+
+    @include for-992{
+      font-size: 30px;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    @include for-550{
+      font-size: 25px;
+    }
   }
 
   &__caption{
@@ -2588,6 +2711,12 @@ ul,p{
     line-height: 21px;
     letter-spacing: 0.01em;
     margin-bottom: 30px;
+
+    @include for-992{
+      font-size: 15px;
+      line-height: 15px;
+      margin-bottom: 15px;
+    }
   }
 
   &__number{
@@ -2598,16 +2727,32 @@ ul,p{
     color: #333333;
     margin-bottom: 40px;
     display: inline-block;
+
+    @include for-992{
+      font-size: 33px;
+      line-height: 48px;
+      letter-spacing: .075em;
+      margin-bottom: 20px;
+    }
   }
 
   &__form{
     form{
       display: flex;
       justify-content: center;
+
+      @include for-768{
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     .site-form-row {
       padding: 0 15px;
+
+      @include for-768{
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -2643,6 +2788,14 @@ ul,p{
     max-width: 33%;
     text-align: center;
     margin-bottom: 30px;
+
+    @include for-768{
+      max-width: 50%;
+    }
+
+    @include for-550{
+      max-width: 100%;
+    }
 
     &:last-child{
       margin-bottom: 0;
@@ -2709,6 +2862,10 @@ ul,p{
       letter-spacing: 0.01em;
       color: #FFFFFF;
       text-align: center;
+
+      @include for-768{
+        font-size: 20px;
+      }
     }
   }
 
@@ -2718,6 +2875,10 @@ ul,p{
     letter-spacing: 0.02em;
     color: #000000;
     margin-bottom: 30px;
+
+    @include for-768{
+      font-size: 16px;
+    }
   }
 
   &__list{
@@ -2735,6 +2896,10 @@ ul,p{
         position: absolute;
         left: 0;
         top: 19px;
+
+        @include for-768{
+          top: 12px;
+        }
       }
 
       span{
@@ -2744,6 +2909,11 @@ ul,p{
         letter-spacing: 0.01em;
         color: #000000;
         position: relative;
+
+        @include for-768{
+          font-size: 14px;
+          line-height: 36px;
+        }
 
         &:after{
           content: '';
@@ -2793,6 +2963,14 @@ ul,p{
     &:nth-child(2) .treatment__item-content, &:nth-child(4) .treatment__item-content, &:nth-child(5) .treatment__item-content{
       align-items: center;
     }
+
+    @include for-768{
+      width: 50%;
+    }
+
+    @include for-550{
+      width: 100%;
+    }
   }
 
   &__item-content{
@@ -2807,6 +2985,10 @@ ul,p{
     display: flex;
     border-radius: 50%;
     margin-bottom: 15px;
+
+    @include for-768{
+      margin: 0 auto 15px;
+    }
 
     img{
       width: 100%;
@@ -2844,6 +3026,10 @@ ul,p{
   &__title{
     display: flex;
     flex-direction: column;
+
+    span{
+      margin-top: 10px;
+    }
   }
 
   &__content{
@@ -2855,8 +3041,24 @@ ul,p{
     padding: 60px 90px;
     column-count: 3;
 
+    @include for-992{
+      padding: 40px 30px;
+    }
+
+    @include for-768{
+      column-count: 2;
+    }
+
+    @include for-550{
+      column-count: 1;
+    }
+
     li{
       margin-bottom: 35px;
+
+      @include for-550{
+        margin-bottom: 20px;
+      }
 
       a{
         position: relative;
@@ -2866,6 +3068,11 @@ ul,p{
         letter-spacing: 0.01em;
         color: #000000;
         transition: .2s all;
+
+        @include for-768{
+          font-size: 17px;
+        }
+
 
         &:hover{
           color: #E48080;
@@ -3244,7 +3451,7 @@ ul,p{
   }
 
   &__checkbox{
-    
+
     @include from-992{
       padding: 0 15px;
     }
