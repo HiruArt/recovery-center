@@ -79,6 +79,13 @@ $(document).ready(function(){
 
 
 
+
+  $('#desktop-btn').click(function () {
+    $('#header-menu').toggleClass('show');
+    $(this).toggleClass('show');
+  });
+
+
   $('#menu-btn').click(function () {
     $(this).closest('header').toggleClass('menu-open');
     $('#header-menu').toggleClass('open');

@@ -173,6 +173,29 @@ ul,p{
   }
 }
 
+.site-link-phone{
+  background: #FF0000;
+  display: flex;
+  justify-content: center;
+  min-width: 165px;
+  width: fit-content;
+  transition: .3s;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #DF8B8B 8.85%, #F25959 59.52%, #F34C4C 100%);
+  box-shadow: 0px 2.54124px 19.0593px rgba(0, 0, 0, 0.25);
+
+
+  span{
+    font-size: 12px;
+    color: white;
+    line-height: 35px;
+  }
+
+  &:hover{
+    box-shadow: 0 7px 18px -3px rgba(0,0,0,.5);
+  }
+}
+
 .site-form{
 
 
@@ -361,6 +384,9 @@ ul,p{
 
 .main-wrap{
 
+  @include from-992{
+    margin-top: 145px;
+  }
   @include for-992{
     margin-top: 80px;
   }
@@ -390,15 +416,30 @@ ul,p{
 
 .header{
 
-  &__inner{
+  @include from-992{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: white;
+    box-shadow: 0px 0 20px -5px rgba(0,0,0,.25);
+  }
 
+  &__inner{
+    position: relative;
   }
 
   &__top{
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
-    background: white;
+    //padding-top: 40px;
+
+    @include from-992{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: white;
+    }
 
     @include for-992{
       position: fixed;
@@ -408,6 +449,7 @@ ul,p{
       box-shadow: 0 0 20px -10px black;
       padding: 15px;
       z-index: 100;
+      background: white;
     }
   }
 
@@ -415,8 +457,48 @@ ul,p{
     display: flex;
     flex-direction: column;
 
+    @include from-992{
+      justify-content: center;
+      width: 40%;
+
+      &--center{
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
     @include for-992{
       justify-content: center;
+    }
+  }
+
+  &__top-desktop-btn{
+    display: flex;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__top-desktop-btn-i{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background-image: url("../img/ico/open-menu.svg");
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: .2s all;
+    border: 2px solid #8caff7;
+    cursor: pointer;
+
+    &:hover{
+      transform: scale(.9);
+    }
+
+    &.show{
+      background-image: url("../img/ico/close.svg");
     }
   }
 
@@ -525,6 +607,27 @@ ul,p{
   }
 
   &__bottom{
+
+    @include from-992{
+      position: absolute;
+      top: 145px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 0 15px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 30px 14px -25px rgba(0,0,0,.25);
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+      transition: .3s all;
+
+      &.show{
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+      }
+    }
 
     @include for-992{
       position: fixed;
@@ -718,7 +821,8 @@ ul,p{
       content: '';
       width: 100%;
       height: calc(100% + 40px);
-      background: rgba(255, 255, 255, 0.85);
+      //background: rgba(255, 255, 255, 0.85);
+      background: white;
       box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
       border-radius: 26px;
       position: absolute;
@@ -812,7 +916,8 @@ ul,p{
     &:before{
       content: '';
       background: rgba(255, 255, 255, 0.85);
-      box-shadow: -10px 5px 20px -7px rgba(0,0,0,.25);
+      //box-shadow: -10px 5px 20px -7px rgba(0,0,0,.25);
+      background: white;
       border-radius: 26px 0 0 26px;
       width: 100%;
       height: 100%;
@@ -949,6 +1054,10 @@ ul,p{
     display: flex;
     flex-direction: column;
     padding: 44px 30px;
+
+    @include for-550{
+      max-width: 100%;
+    }
 
     form.site-form{
       display: flex;
@@ -1335,6 +1444,8 @@ ul,p{
     color: #333333;
     font-weight: 500;
     margin-bottom: 15px;
+
+    text-align: justify;
   }
 
   &__txt{
@@ -1343,6 +1454,7 @@ ul,p{
     letter-spacing: 0.01em;
     color: #333333;
     margin-bottom: 15px;
+    text-align: justify;
   }
 
   &__date{
@@ -1978,9 +2090,11 @@ ul,p{
     transition: .3s;
 
     &:hover{
-      //color: #5f86d6;
-      box-shadow: 0px 2.83167px 21.2375px rgba(0, 0, 0, 0);
-      color: #C4C4C4;
+      color: #E48080;
+      //box-shadow: 0px 2.83167px 21.2375px rgba(0, 0, 0, 0);
+      box-shadow: 0 2.83px 21.24px #E48080;
+      padding-left: 20px;
+      padding-right: 12px;
     }
 
     @include for-1100{
@@ -2243,6 +2357,10 @@ ul,p{
       background: transparent;
     }
 
+    @include for-550{
+      padding-left: 0;
+      padding-right: 0;
+    }
 
   }
 
@@ -2257,6 +2375,7 @@ ul,p{
     @include for-768{
       font-size: 20.58px;
       line-height: 20px;
+      text-align: center;
     }
   }
 
@@ -2275,6 +2394,7 @@ ul,p{
     @include for-768{
       font-size: 16px;
       margin-bottom: 10px;
+      text-align: center;
     }
   }
 
@@ -2287,9 +2407,17 @@ ul,p{
       @media (max-width: 1290px) {
         flex-direction: column;
       }
+
+      @include for-768{
+        align-items: center;
+      }
       .form__phone{
         @media (max-width: 1290px) {
           width: 50%;
+        }
+
+        @include for-550{
+          margin: 0 auto;
         }
 
         @media (max-width: 420px) {
@@ -2304,6 +2432,11 @@ ul,p{
             width: 100%;
           }
         }
+
+        @include for-550{
+          margin: 0 auto;
+        }
+
         @media (max-width: 420px) {
           width: 100%;
         }
@@ -2312,6 +2445,11 @@ ul,p{
         @media (max-width: 1290px) {
           width: 50%;
         }
+
+        @include for-550{
+          margin: 0 auto;
+        }
+
         @media (max-width: 420px) {
           width: 100%;
         }
@@ -2327,6 +2465,12 @@ ul,p{
         &:last-child{
           margin-bottom: 0;
         }
+      }
+
+      @include for-550{
+        width: 100%;
+        justify-content: center;
+
       }
     }
   }
@@ -2646,6 +2790,7 @@ ul,p{
   &__title{
 
   }
+
   &__content{
     max-width: 760px;
     margin: 0 auto;
@@ -2657,8 +2802,192 @@ ul,p{
       letter-spacing: 0.01em;
       color: #000000;
       margin: 15px 0;
+      text-align: justify;
+
+      @include for-992{
+        font-size: 14px;
+      }
+    }
+
+    a{
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+      //color: #000000;
+      margin: 15px 0;
+      color: #E48080;
+      transition: .3s;
+      text-decoration: underline;
+      @include for-992{
+        font-size: 14px;
+      }
+
+      &:hover{
+        color: #2a5fce;
+      }
+    }
+
+    ul{
+
+      li{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        color: #000000;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        @include for-992{
+          font-size: 14px;
+        }
+
+        &:before{
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #E48080;
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          top: 5px;
+        }
+      }
+    }
+    ol{
+      list-style: none;
+      padding: 0;
+
+      li{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        color: #000000;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        counter-increment: step-counter;
+        @include for-992{
+          font-size: 14px;
+        }
+
+        &:before{
+          content: counter(step-counter);
+          border-radius: 50%;
+          color: #E48080;
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-weight: 700;
+        }
+      }
     }
   }
+
+  &--blue {
+    background-color: #C4DCEB;
+  }
+
+  &--blue &__inner{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--blue &__title{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    line-height: 75px;
+    font-size: 42px;
+    letter-spacing: 0.01em;
+    color: #333333;
+    display: flex;
+    padding-bottom: 0;
+
+    @include for-992{
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 26px;
+      line-height: 40px;
+    }
+
+    &:after{
+      display: none;
+    }
+  }
+
+
+  &--img {
+    background-color: #E2ECF3;
+    padding-top: 90px;
+    padding-bottom: 150px;
+    position: relative;
+
+    @include for-992{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 35%;
+      display: flex;
+      opacity: .7!important;
+
+      @include for-992{
+        height: 80%;
+        width: auto;
+        opacity: .2!important;
+      }
+
+      @include for-768{
+        height: 550px;
+      }
+    }
+
+    &:before{
+      content: '';
+    }
+
+    &__content{
+      max-width: 490px;
+      width: 100%;
+      margin-left: auto;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+
+      @include for-992{
+        max-width: 100%;
+      }
+    }
+
+    p, a, ul li, ol li{
+      line-height: 29px;
+      letter-spacing: 0.19em;
+
+      @include for-992{
+        line-height: 24px;
+      }
+    }
+  }
+
+  &--img &__title{
+    width: fit-content;
+  }
+
 }
 
 .hospital{
@@ -2696,7 +3025,7 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin: 15px 0;
-    //text-align: justify;
+    text-align: justify;
 
     @include for-768{
       font-size: 15px;
@@ -2853,7 +3182,8 @@ ul,p{
     padding-right: 135px;
 
     @include for-768{
-      padding-right: 0;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
@@ -2923,7 +3253,30 @@ ul,p{
 
       @include for-768{
         margin-bottom: 15px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 50%;
       }
+
+      @include for-420{
+        width: 100%;
+      }
+    }
+
+    .site-link-phone{
+      width: 100%;
+    }
+
+    .site-form__input{
+      width: 100%;
+
+      input{
+        width: 100%;
+      }
+    }
+
+    .form__btn{
+      width: 100%;
     }
   }
 
@@ -3074,6 +3427,21 @@ ul,p{
         }
       }
 
+      a{
+
+        &:hover{
+
+          span{
+            color: #E48080;
+
+            &:after{
+              background: #E48080;
+            }
+          }
+        }
+
+      }
+
       span{
         font-weight: 300;
         font-size: 18px;
@@ -3081,6 +3449,7 @@ ul,p{
         letter-spacing: 0.01em;
         color: #000000;
         position: relative;
+        transition: .2s all;
 
         @include for-768{
           font-size: 14px;
@@ -3095,6 +3464,7 @@ ul,p{
           width: 100%;
           height: 1px;
           background: #77A3BE;
+          transition: .2s all;
         }
       }
     }
