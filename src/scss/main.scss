@@ -982,7 +982,7 @@ ul,p{
   @include for-992{
 
     .parent {
-      cursor: pointer;
+      //cursor: pointer;
 
       > a{
         width: calc(100% - 30px);
@@ -1014,6 +1014,12 @@ ul,p{
 
   .mobile-arrow{
     display: none;
+    outline: 0!important;
+    outline-color: transparent!important;
+    outline-width: 0!important;
+    outline-style: none!important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 
     @include for-992{
       display: flex;
@@ -2542,6 +2548,12 @@ ul,p{
       max-width: 100%;
       display: none;
     }
+
+    img{
+      @media (min-height: 1290px) {
+        height: 100%;
+      }
+    }
   }
 
 }
@@ -3503,11 +3515,13 @@ ul,p{
     align-items: center;
 
     &:nth-child(2) .treatment__item-content, &:nth-child(4) .treatment__item-content, &:nth-child(5) .treatment__item-content{
-      align-items: center;
+      @include from-992 {
+        align-items: center;
+      }
     }
 
     @include for-768{
-      width: 50%;
+      width: 100%;
 
     }
 
@@ -3517,9 +3531,13 @@ ul,p{
   }
 
   &__item-content{
-    max-width: fit-content;
+    //max-width: fit-content;
     display: flex;
     flex-direction: column;
+
+
+    width: 100%;
+    align-items: center;
   }
 
   &__ico{
@@ -3546,6 +3564,9 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     margin-bottom: 15px;
+
+    text-align: center;
+
   }
 
   &__txt{
@@ -3555,6 +3576,8 @@ ul,p{
     letter-spacing: 0.01em;
     color: #000000;
     width: 100%;
+
+    text-align: center;
   }
 
 }
