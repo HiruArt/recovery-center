@@ -193,7 +193,7 @@ $(document).ready(function(){
       slidesToScroll: 1,
       arrows: true,
       dots: false,
-      infinite: false,
+      infinite: true,
       responsive: [
         {
           breakpoint: 800,
@@ -243,7 +243,7 @@ $(document).ready(function(){
       slidesToScroll: 1,
       arrows: true,
       dots: false,
-      infinite: false,
+      infinite: true,
       responsive: [
         {
           breakpoint: 800,
@@ -288,12 +288,90 @@ $(document).ready(function(){
       bLazy.revalidate();
     });
 
+    $('#specialists-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+    $('#specialists-slider').on('afterChange', function(event, slick, direction){
+      bLazy.revalidate();
+    });
+
+    $('#hospital-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+    $('#hospital-slider').on('afterChange', function(event, slick, direction){
+      bLazy.revalidate();
+    });
+
   }
 
   /*mobile sliders*/
   if($(window).width() < 800) {
 
     $('#service-type-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+      ]
+    });
+
+    $('#service-type-slider').on('afterChange', function(event, slick, direction){
+      bLazy.revalidate();
+    });
+
+    $('#treatment-slider').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
       arrows: true,
@@ -313,6 +391,10 @@ $(document).ready(function(){
           }
         },
       ]
+    });
+
+    $('#treatment-slider').on('afterChange', function(event, slick, direction){
+      bLazy.revalidate();
     });
 
   }
@@ -359,6 +441,21 @@ $(document).ready(function(){
     midClick: true,
 
   });
+
+  if($(window).width() > 992) {
+    $(document).scroll(function () {
+      var top = $(document).scrollTop();
+
+      if (top > 145) {
+        $(".page__wrapper").addClass('scroll');
+      } else {
+        $(".page__wrapper").removeClass('scroll');
+        $(".header__top-desktop-btn-i").removeClass('show');
+        $("#header-menu").removeClass('show');
+      }
+
+    });
+  }
 
 });
 
